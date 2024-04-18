@@ -506,6 +506,7 @@ def non_max_suppression(prediction, conf_thres=0.1, iou_thres=0.6, multi_label=T
 
     method = 'merge'
     nc = prediction[0].shape[1] - 5  # number of classes
+    print("nc: ", nc)
     multi_label &= nc > 1  # multiple labels per box
     output = [None] * len(prediction)
 
