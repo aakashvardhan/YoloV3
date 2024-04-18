@@ -1,4 +1,4 @@
 classes=55
-train=data/animal.txt
-test=data/animal.txt
-names=data/animal.names
+train=data/custom.txt
+test=data/custom.txt
+names=data/custom.names
