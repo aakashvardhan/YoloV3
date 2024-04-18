@@ -11,7 +11,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
-torch.set_default_tensor_type('torch.cuda.FloatTensor')
+# torch.set_default_tensor_type('torch.cuda.FloatTensor')
 import torch.nn as nn
 import torchvision
 from tqdm import tqdm
