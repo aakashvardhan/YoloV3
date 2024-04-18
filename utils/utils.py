@@ -16,7 +16,7 @@ import torch.nn as nn
 import torchvision
 from tqdm import tqdm
 
-from utils.torch_utils import *   # , google_utils
+from . import torch_utils   # , google_utils
 
 matplotlib.rc('font', **{'size': 11})
 
