@@ -200,6 +200,7 @@ def test(cfg,
 
 
 if __name__ == '__main__':
+    
     parser = argparse.ArgumentParser(prog='test.py')
     parser.add_argument('--cfg', type=str, default='./cfg/yolov3-custom.cfg', help='*.cfg path')
     parser.add_argument('--data', type=str, default='./data/customdata/custom.data', help='*.data path')
