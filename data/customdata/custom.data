@@ -1,4 +1,4 @@
 classes=55
-train=data/customdata/custom.txt
-test=data/customdata/custom.txt
-names=data/customdata/custom.names
+train=YoloV3/data/customdata/custom.txt
+test=YoloV3/data/customdata/custom.txt
+names=YoloV3/data/customdata/custom.names
