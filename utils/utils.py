@@ -562,6 +562,7 @@ def non_max_suppression(prediction, conf_thres=0.1, iou_thres=0.6, multi_label=T
             print("boxes: ", boxes)
             print("scores: ", scores)
             i = torchvision.ops.boxes.nms(boxes, scores, iou_thres)
+            print("i: ", i)
             if n < 1E4:  # update boxes as boxes(i,4) = weights(i,n) * boxes(n,4)
                 # weights = (box_iou(boxes, boxes).tril_() > iou_thres) * scores.view(-1, 1)  # box weights
                 # weights /= weights.sum(0)  # normalize
