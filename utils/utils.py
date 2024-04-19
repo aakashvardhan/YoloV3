@@ -559,6 +559,8 @@ def non_max_suppression(prediction, conf_thres=0.1, iou_thres=0.6, multi_label=T
         boxes, scores = x[:, :4].clone() + c.view(-1, 1) * max_wh, x[:, 4]  # boxes (offset by class), scores
         boxes, scores = boxes.to(device), scores.to(device)
         if method == 'merge':  # Merge NMS (boxes merged using weighted mean)
+            print("boxes: ", boxes)
+            print("scores: ", scores)
             i = torchvision.ops.boxes.nms(boxes, scores, iou_thres)
             if n < 1E4:  # update boxes as boxes(i,4) = weights(i,n) * boxes(n,4)
                 # weights = (box_iou(boxes, boxes).tril_() > iou_thres) * scores.view(-1, 1)  # box weights
