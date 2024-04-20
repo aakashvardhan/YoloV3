@@ -13,7 +13,7 @@ def test(cfg,
          weights=None,
          batch_size=16,
          img_size=416,
-         conf_thres=0.001,
+         conf_thres=0.1,
          iou_thres=0.6,  # for nms
          save_json=False,
          single_cls=False,
@@ -100,7 +100,7 @@ def test(cfg,
 
             # Run NMS
             t = torch_utils.time_synchronized()
-            print("inf_out: ", inf_out)
+            # print("inf_out: ", inf_out)
             output = non_max_suppression(inf_out, conf_thres=conf_thres, iou_thres=iou_thres)  # nms
             t1 += torch_utils.time_synchronized() - t
 
