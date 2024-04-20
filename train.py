@@ -236,6 +236,8 @@ def train():
             ni = i + nb * epoch  # number integrated batches (since train start)
             imgs = imgs.to(device).float() / 255.0  # uint8 to float32, 0 - 255 to 0.0 - 1.0
             targets = targets.to(device)
+            print('imgs_shape: ', imgs.shape)
+            print('targets_shape: ', targets.shape)
 
             # Burn-in
             if ni <= n_burn * 2:
@@ -260,7 +262,7 @@ def train():
 
             # Run model
             pred = model(imgs)
-            print(pred.shape)
+            print("pred_shape: ", pred.shape)
 
             # Compute loss
             loss, loss_items = compute_loss(pred, targets, model)
