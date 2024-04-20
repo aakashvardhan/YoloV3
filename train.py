@@ -260,6 +260,7 @@ def train():
 
             # Run model
             pred = model(imgs)
+            print(pred.shape)
 
             # Compute loss
             loss, loss_items = compute_loss(pred, targets, model)
