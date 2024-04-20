@@ -418,6 +418,8 @@ def train():
                 single_cls=opt.single_cls,
                 dataloader=testloader,
             )
+            
+            plot_images(imgs=imgs, targets=targets, paths=paths, fname="test_batch.png")
 
         # Write epoch results
         with open(results_file, "a") as f:
