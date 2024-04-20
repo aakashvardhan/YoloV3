@@ -201,11 +201,11 @@ def ap_per_class(tp, conf, pred_cls, target_cls):
 
             # Recall
             recall = tpc / (n_gt + 1e-16)  # recall curve
-            r[ci] = interp(-pr_score, -conf[i], recall[:, 0])  # r at pr_score, negative x, xp because xp decreases
+            r[ci] = np.interp(-pr_score, -conf[i], recall[:, 0])  # r at pr_score, negative x, xp because xp decreases
 
             # Precision
             precision = tpc / (tpc + fpc)  # precision curve
-            p[ci] = interp(-pr_score, -conf[i], precision[:, 0])  # p at pr_score
+            p[ci] = np.interp(-pr_score, -conf[i], precision[:, 0])  # p at pr_score
 
             # AP from recall-precision curve
             for j in range(tp.shape[1]):
@@ -559,8 +559,8 @@ def non_max_suppression(prediction, conf_thres=0.1, iou_thres=0.6, multi_label=T
         boxes, scores = x[:, :4].clone() + c.view(-1, 1) * max_wh, x[:, 4]  # boxes (offset by class), scores
         boxes, scores = boxes.to(device), scores.to(device)
         if method == 'merge':  # Merge NMS (boxes merged using weighted mean)
-            print("boxes: ", boxes.shape)
-            print("scores: ", scores.shape)
+            # print("boxes: ", boxes.shape)
+            # print("scores: ", scores.shape)
             i = torchvision.ops.boxes.nms(boxes, scores, iou_thres)
             if n < 1E4:  # update boxes as boxes(i,4) = weights(i,n) * boxes(n,4)
                 # weights = (box_iou(boxes, boxes).tril_() > iou_thres) * scores.view(-1, 1)  # box weights
