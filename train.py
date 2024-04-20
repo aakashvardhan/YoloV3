@@ -307,8 +307,8 @@ def train():
                 imgs.to(device).float() / 255.0
             )  # uint8 to float32, 0 - 255 to 0.0 - 1.0
             targets = targets.to(device)
-            print("imgs_shape: ", imgs.shape)
-            print("targets_shape: ", targets.shape)
+            # print("imgs_shape: ", imgs.shape)
+            # print("targets_shape: ", targets.shape)
 
             # Burn-in
             if ni <= n_burn * 2:

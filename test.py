@@ -100,6 +100,7 @@ def test(cfg,
 
             # Run NMS
             t = torch_utils.time_synchronized()
+            print("inf_out: ", inf_out)
             output = non_max_suppression(inf_out, conf_thres=conf_thres, iou_thres=iou_thres)  # nms
             t1 += torch_utils.time_synchronized() - t
 
